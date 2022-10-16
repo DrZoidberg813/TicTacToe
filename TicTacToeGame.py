@@ -34,21 +34,23 @@ class Tictactoe:
             print(i, *j)
 
     def input_x(self, i, j):
-        if i < len(self.field) and j < len(self.field[0]) and not self.field[i][j] in ["o", "x"]:
+        if 0 <= i < len(self.field) and 0 <= j < len(self.field[0]) and not self.field[i][j] in ["o", "x"]:
             self.field[i][j] = "x"
+            self.show_field()
             return True
         return False
 
     def input_o(self, i, j):
-        if i < len(self.field) and j < len(self.field[0]) and not self.field[i][j] in ["o", "x"]:
+        if 0 <= i < len(self.field) and 0 <= j < len(self.field[0]) and not self.field[i][j] in ["o", "x"]:
             self.field[i][j] = "o"
+            self.show_field()
             return True
         return False
 
     def start_game(self):
+        self.show_field()
         count = 0
         while True:
-            self.show_field()
             pos_x, pos_y = map(int, input("Enter the position: ").split())
             if count % 2 == 0 and self.input_x(pos_x, pos_y):
                 count += 1
