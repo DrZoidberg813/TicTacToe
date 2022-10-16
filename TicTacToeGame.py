@@ -1,3 +1,6 @@
+import os
+
+
 class Tictactoe:
     def __init__(self):
         self.field = [["-", "-", "-"], ["-", "-", "-"], ["-", "-", "-"]]
@@ -25,6 +28,7 @@ class Tictactoe:
             return False
 
     def show_field(self):
+        os.system('cls')
         print(" ", *[i for i, j in enumerate(self.field)])
         for i, j in enumerate(self.field):
             print(i, *j)
@@ -57,16 +61,16 @@ class Tictactoe:
 
             if is_full and is_full is not None:
                 self.show_field()
-                print("X won!")
+                print("\nX won!")
                 break
             elif not is_full and is_full is not None:
                 self.show_field()
-                print("O won!")
+                print("\nO won!")
                 break
 
             if count == len(self.field) * len(self.field[0]):
                 self.show_field()
-                print("Draw!")
+                print("\nDraw!")
                 break
 
 
