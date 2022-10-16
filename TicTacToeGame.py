@@ -51,7 +51,7 @@ class Tictactoe:
         self.show_field()
         count = 0
         while True:
-            pos_x, pos_y = map(int, input("Enter the position: ").split())
+            pos_x, pos_y = map(int, input("Enter the position(x, y): ").split())
             if count % 2 == 0 and self.input_x(pos_x, pos_y):
                 count += 1
             elif count % 2 != 0 and self.input_o(pos_x, pos_y):
