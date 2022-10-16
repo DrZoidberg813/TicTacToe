@@ -71,8 +71,9 @@ class Tictactoe:
 
 
 def main():
-    test = Tictactoe()
-    test.start_game()
+    if input("Start game? y / n: ") == "y":
+        test = Tictactoe()
+        test.start_game()
 
 
 main()
